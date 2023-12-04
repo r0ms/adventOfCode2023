@@ -1,11 +1,7 @@
 const data =  require('./data.json')
-const CARD_REMOVAL_REGEX = /^Card\W+\d+:/g
 const i = (a, b) => (a.filter(Set.prototype.has, new Set(b)))
-const r = data.map((l) => {
-  let arrs = l.replace(CARD_REMOVAL_REGEX, '').trimStart().trimEnd().split(' | ')
-  .map((e) => {
-    return e.split(/\W+/)
-  })
+console.log('result', data.map((l) => {
+  let arrs = l.replace(/^Card\W+\d+:/g, '').trimStart().trimEnd().split(' | ')
+  .map((e) => (e.split(/\W+/)))  
   return i(arrs[1], arrs[0]).length
-}).map((win) => (win?(1<<win-1):0)).reduce((a, b)=>a+b, 0)
-console.log('result', r)
+}).map((win) => (win?(1<<win-1):0)).reduce((a, b)=>a+b, 0))

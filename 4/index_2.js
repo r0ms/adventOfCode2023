@@ -9,7 +9,7 @@ data.map((l) => {
   })
   return i(arrs[1], arrs[0]).length
 })
-.forEach((n, index, arr) => {
+.forEach((n, index) => {
   const removed = wins.splice(index+1, n)
   wins.splice(index+1, 0, ...removed.map((value) => value+wins[index]))
 })
