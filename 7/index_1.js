@@ -1,4 +1,26 @@
 const data = require('./data.json')
+const example = [{
+    "hand": "32T3K",
+    "bet": 765
+  },
+  {
+    "hand": "T55J5",
+    "bet": 684
+  },
+  {
+    "hand": "KK677",
+    "bet": 28
+  },
+  {
+    "hand": "KTJJT",
+    "bet": 220
+  },
+  {
+    "hand": "QQQJA",
+    "bet": 483
+  },
+]
+
 function* execAll(str, regex) {
   let match;
   while (match = regex.exec(str)) {
